@@ -28,7 +28,7 @@ function styles() {
 function watch() {
     browserSync.init({
         server: {
-            baseDir: "./"
+            baseDir: "./src/"
         }
     });
     gulp.watch('./src/scss/**/*.scss', styles)
