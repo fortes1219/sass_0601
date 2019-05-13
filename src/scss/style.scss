@@ -1,0 +1,13 @@
+@import "_reset.scss";
+@import "_commonStyle.scss";
+
+html {
+    touch-action: manipulation;
+
+    body {
+        font-family: "Microsoft JhengHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        touch-action: manipulation;
+        overflow-x: hidden;
+    }
+}
+
