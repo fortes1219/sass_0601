@@ -9,7 +9,50 @@ html {
         touch-action: manipulation;
         overflow-x: hidden;
         h1 {
-            color: #fff;
+            color: hsl(0, 100%, 50%);
         }
     }
 }
+
+$fontClass: "serif";
+$value: 1+$fontClass;
+$colorTheme: hsl(20%, 100%, 50%);
+$marginTheme: 2rem + 4rem auto;
+
+@mixin test($margin, $color){
+  margin: $margin;
+  color: $color;
+}
+
+@mixin test_2($margin, $color){
+  &:after{
+    content: "#{$value}";
+    margin: $margin;
+    color: $color;
+  }
+}
+
+p {
+    // @include test($marginTheme, $colorTheme)
+    @include test_2($marginTheme, $colorTheme)
+}
+
+h1{
+  font-size: 10rem;
+}
+
+b{
+  @extend h1;
+}
+
+span{
+  @extend h1;
+font-size: 2rem;
+  
+}
+
+// h1,b,span{
+//   font-size: 10rem;
+// }
+
+
