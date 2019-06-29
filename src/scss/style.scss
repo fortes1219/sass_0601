@@ -53,3 +53,15 @@ $sample: 10;
         }
     }
 }
+
+@function setPadding($topBottom, $leftRight){
+  $conbine: #{$topBottom * 1rem + ' ' + $leftRight * 1rem};
+  @return $conbine;
+}
+
+.function{
+  @include flexBox(column);
+  @include flexAlign(center, flex-start);
+  background-color: #bbb;
+  padding: setPaddin(2, 1); // 單位:rem
+}
