@@ -14,45 +14,42 @@ html {
     }
 }
 
-$fontClass: "serif";
-$value: 1+$fontClass;
-$colorTheme: hsl(20%, 100%, 50%);
-$marginTheme: 2rem + 4rem auto;
+$sample: 10;
 
-@mixin test($margin, $color){
-  margin: $margin;
-  color: $color;
+.do_if {
+    display: flex;
+    @if $sample > 8 {
+        font-size: 1rem;
+    }
+    @if $sample >= 10 {
+        font-size: 2rem;
+    }
+    @if $sample ==11 {
+        font-size: 3rem;
+    } @else {
+        font-size: 10rem;
+    }
 }
 
-@mixin test_2($margin, $color){
-  &:after{
-    content: "#{$value}";
-    margin: $margin;
-    color: $color;
-  }
+.for_loop {
+    display: flex;
+    flex-direction: row;
+    font-size: 3rem;
+    span {
+        @for $i from 0 through 2 {
+            label {
+                font-size: 3rem;
+                &:nth-child(#{$i+1}) {
+                    @if $i == 1{
+                      background: #f90;
+                      color: #fff;
+                    }
+                    &:after {
+                        content: "#{$i}";
+                        margin: 0 0.5rem;
+                    }
+                }
+            }
+        }
+    }
 }
-
-p {
-    // @include test($marginTheme, $colorTheme)
-    @include test_2($marginTheme, $colorTheme)
-}
-
-h1{
-  font-size: 10rem;
-}
-
-b{ 
-  @extend h1;
-}
-
-span{
-  @extend h1;
-font-size: 2rem;
-  
-}
-
-// h1,b,span{
-//   font-size: 10rem;
-// }
-
-
