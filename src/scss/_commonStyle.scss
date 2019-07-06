@@ -161,6 +161,22 @@ $fontSize_mini: 0.65em;
 }
 
 /* media query */
+
+$ipad: "screen and (max-width: 1024px) and (orientation: landscape)";
+$iphoneX: "screen and (max-width: 812px) and (max-height: 375px)";
+
+@mixin ipad {
+    @media #{$ipad} {
+        @content;
+    }
+}
+
+@mixin iphoneX {
+    @media #{$iphoneX} {
+        @content;
+    }
+}
+
 @mixin xl {
     @media all and (max-width: 1100px) {
         @content;
