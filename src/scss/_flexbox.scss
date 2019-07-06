@@ -1,6 +1,6 @@
 @mixin dataRowCount {
     @for $i from 1 through 24 {
-        &[data-row-count="#{$i}"] {
+        [data-row-count="#{$i}"] {
             .data_row {
                 width: calc(100% / #{$i});
             }
@@ -9,7 +9,7 @@
 }
 
 @for $i from 1 through 24 {
-    &[data-row-count="#{$i}"] {
+    [data-row-count="#{$i}"] {
         .data_row {
             width: calc(100% / #{$i});
         }
