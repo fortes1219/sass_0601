@@ -1,13 +1,52 @@
 @import "_reset.scss";
+@import "_variable.scss";
 @import "_commonStyle.scss";
+@import "_flexbox.scss";
+@import "_dataAttribute.scss";
 
 html {
     touch-action: manipulation;
+    height: 100%;
 
     body {
         font-family: "Microsoft JhengHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
         touch-action: manipulation;
-        overflow-x: hidden;
+        height: 100%;
     }
 }
 
+h1{
+    font-size: 1vh;
+    background: url('../img/bg.jpg') no-repeat center;
+}
+h2{
+    font-size: 0.5vh;
+}
+
+@function setPadding($topBottom, $leftRight){
+  $conbine: #{$topBottom * 1rem + ' ' + $leftRight * 1rem};
+  @return $conbine;
+}
+
+.function{
+  @include flexBox(column);
+  @include flexAlign(center, flex-start);
+  background-color: #bbb;
+  padding: setPaddin(2, 1); // 單位:rem
+}
+
+.container{
+    background-color: #efefef;
+    span{
+        @include boxSizing;
+        padding: 0.5rem;
+        height: 10vh;
+        &:before{
+            content: "";
+            display: block;
+            width: 100%;
+            height: 100%;
+            background-color: #333;
+        }
+    }
+}
